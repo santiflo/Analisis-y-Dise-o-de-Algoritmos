@@ -1,0 +1,16 @@
+S[0...N] es una lista de las islas, donde N>=0 ordenadas de izquerda a derecha
+
+cada S[i] = (Li, Ri), donde Li < Ri. Li y Ri representan los radares izquierdo
+y derecho respectivamente que cubren an su radio maxio a una isla i
+
+cubrimiento_minimo_radares(S):
+	cont = 0
+	i, n, r = 0, len(S), float(-'inf')
+	while i<n:
+		while i<n and S[i][0]<=r:
+			if r>S[i][1]: r = S[i][1]
+			i += 1
+		cont += 1
+		r = isla[i][1]
+	return cont
+
